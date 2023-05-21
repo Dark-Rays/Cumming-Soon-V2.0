@@ -56,8 +56,7 @@
     top: 15%;
     z-index: 1;
     width: 90%;
-    height: 80%;
-    background-color: black;
+    height: 85%;
 }
 
 .navbar {
@@ -189,6 +188,129 @@
 
 #extras .opt:hover .circle-icon {
     display: none;
+}
+
+.counter{
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    bottom: 0px;
+    left: 10%;
+}
+
+.timer-text{
+    position: absolute;
+    padding: 3px;
+    left: 30px;
+    top: -10px;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 2;
+    font-size:small;
+}
+
+.progressbars{
+    position: absolute;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border: white 1px solid;
+    border-radius: 30px;
+}
+
+.progressbar{
+    position: relative;
+    width: 20%;
+    height: 100%;
+}
+
+.progressbar__svg{
+    height: 100%;
+    width: 100%;
+}
+
+.progressbar__svg-circle {
+    fill: none;
+    height: 100%;
+    width: 100%;
+    stroke-width: 5;
+    stroke-dasharray: 189;
+    stroke-dashoffset: 189;
+    stroke: white;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+.circle-bg {
+    stroke-dashoffset: 0;
+    stroke: rgba(26, 44, 52, 0.445)
+}
+
+.progressbar_text{
+    position: absolute;
+    height: 50%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    left: 35%;
+    color:white;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size:medium;
+  
+}
+
+.circle-days {
+    animation: anim_circle-days 1s ease-in-out forwards;
+}
+
+.circle-hours {
+    animation: anim_circle-hours 1s ease-in-out forwards;
+}
+
+.circle-minutes {
+    animation: anim_circle-minutes 1s ease-in-out forwards;
+}
+
+.circle-seconds {
+    animation: anim_circle-seconds 1s linear forwards, countdown_circle-seconds var(--seconds) linear 1s alternate;
+}
+
+@keyframes anim_circle-days {
+    to {
+      stroke-dashoffset: var(--days-dash);
+    }
+}
+
+@keyframes anim_circle-hours {
+    to {
+      stroke-dashoffset: var(--hours-dash);
+    }
+}
+
+@keyframes anim_circle-minutes {
+    to {
+      stroke-dashoffset: var(--minutes-dash);
+    }
+}
+
+@keyframes anim_circle-seconds {
+    to {
+      stroke-dashoffset: var(--seconds-dash);
+    }
+}
+
+@keyframes countdown_circle-seconds {
+    to{
+        stroke-dashoffset: 189;
+    }
 }
 
 
