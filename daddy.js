@@ -69,5 +69,5 @@ async function randomizer() {
 }
 
 
-setTimeout(() => randomizer(), 10000);
+setTimeout(() => randomizer(), 3000);
 })
